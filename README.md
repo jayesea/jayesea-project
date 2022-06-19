@@ -38,11 +38,12 @@ https://wiki.stmicroelectronics.cn/stm32mcu/index.php?title=AI:How_to_use_Teacha
 
 
 5-utilisant stmcubeprogrammer ajouter les fichiers sounds (disponible dans "FP-AI-VISION1_CC-GTM_network\FP-AI-VISION1_V3.0.0\Utilities\Sound") dans la mémoire aux adresses appropriées:
-  DEFAULT à l'adresse 0x90000000
-  LEFT à l'adresse 0x90050000
-  RIGHT à l'adresse 0x900A0000
-  STRAIGHT à l'adresse 0x900F0000
-  U-TURN à l'adresse 0x90100000 
+
+     DEFAULT à l'adresse 0x90000000
+     LEFT à l'adresse 0x90050000
+     RIGHT à l'adresse 0x900A0000
+     STRAIGHT à l'adresse 0x900F0000
+     U-TURN à l'adresse 0x90100000 
   
   
 6-finalement mettre le fichier.elf dans la carte  (le fichier est généré dans "FP-AI-VISION1_CC-GTM_network\FP-AI-VISION1_V3.0.0\Projects\STM32H747I-DISCO\Applications\FoodReco_MobileNetDerivative\Quantized_Model\STM32CubeIDE\CM7\Quantized_Ext")
