@@ -4,7 +4,16 @@ Dans le dossier fichiers.c.h.Notre-CNN vous trouverez les fichiers.c et .h de no
 
 Dans le dossier fichiers.c.h vous trouverez les fichiers.c et .h du modèle réalisé utilisant Teachable Machine (nous avons utilisé le dataset avec les flèches commentées)  et le fichier .elf de l'application à mettre sur la carte en utilisant STM32CubeProgrammer.
 
-**********************Démarche à faire sur le projet STM pour chaque changement de modéle:*****************************************
+
+Pour convertir un fichier TFLite en fichiers .c .h il faut utiliser la commande suivante:
+stm32ai generate -m .\model.tflite --quantize -v 2
+
+
+Lien Tuto Teachable Machine :
+
+https://wiki.stmicroelectronics.cn/stm32mcu/index.php?title=AI:How_to_use_Teachable_Machine_to_create_an_image_classification_application_on_STM32&oldid=18896
+
+##############################**Démarche à faire sur le projet STM pour chaque changement de modéle:**#########################################################
 1- le dossier "FP-AI-VISION1_CC-GTM_network\FP-AI-VISION1_V3.0.0\Projects\STM32H747I-DISCO\Applications\FoodReco_MobileNetDerivative\Quantized_Model\CM7" contient les dossiers Inc et Src a changer en remettant les fichiers network.c et network_data.c dans Src et network.h et network_data.h dans Inc.
 
 2- modification sur le fichier fp_vision_app.c dans "FP-AI-VISION1_CC-GTM_network\FP-AI-VISION1_V3.0.0\Projects\STM32H747I-DISCO\Applications\FoodReco_MobileNetDerivative\Quantized_Model\CM7\Src".
@@ -33,10 +42,3 @@ Dans le dossier fichiers.c.h vous trouverez les fichiers.c et .h du modèle réa
 *************************************************************************************************************************************************************
   
 
-Pour convertir un fichier TFLite en fichiers .c .h il faut utiliser la commande suivante:
-stm32ai generate -m .\model.tflite --quantize -v 2
-
-
-Lien Tuto Teachable Machine :
-
-https://wiki.stmicroelectronics.cn/stm32mcu/index.php?title=AI:How_to_use_Teachable_Machine_to_create_an_image_classification_application_on_STM32&oldid=18896
