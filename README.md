@@ -13,7 +13,7 @@ Lien Tuto Teachable Machine :
 
 https://wiki.stmicroelectronics.cn/stm32mcu/index.php?title=AI:How_to_use_Teachable_Machine_to_create_an_image_classification_application_on_STM32&oldid=18896
 
-##############################**Démarche à faire sur le projet STM pour chaque changement de modéle:**#########################################################
+####**Démarche à faire sur le projet STM pour chaque changement de modéle:**#####
 1- le dossier "FP-AI-VISION1_CC-GTM_network\FP-AI-VISION1_V3.0.0\Projects\STM32H747I-DISCO\Applications\FoodReco_MobileNetDerivative\Quantized_Model\CM7" contient les dossiers Inc et Src a changer en remettant les fichiers network.c et network_data.c dans Src et network.h et network_data.h dans Inc.
 
 2- modification sur le fichier fp_vision_app.c dans "FP-AI-VISION1_CC-GTM_network\FP-AI-VISION1_V3.0.0\Projects\STM32H747I-DISCO\Applications\FoodReco_MobileNetDerivative\Quantized_Model\CM7\Src".
