@@ -19,18 +19,18 @@ https://wiki.stmicroelectronics.cn/stm32mcu/index.php?title=AI:How_to_use_Teacha
 
 2- modification sur le fichier fp_vision_app.c dans "FP-AI-VISION1_CC-GTM_network\FP-AI-VISION1_V3.0.0\Projects\STM32H747I-DISCO\Applications\FoodReco_MobileNetDerivative\Quantized_Model\CM7\Src".
 
-2-1/
-    - si le modele est généré utilisant teachable model change les lignes 365 et 366 par ceci:
-          App_Context_Ptr->Ai_ContextPtr->nn_input_norm_scale=127.5f;
-          App_Context_Ptr->Ai_ContextPtr->nn_input_norm_zp=127;
-    - si le modele est généré par tensorflow change ces lignes par:
-          App_Context_Ptr->Ai_ContextPtr->nn_input_norm_scale=255.0f;
-          App_Context_Ptr->Ai_ContextPtr->nn_input_norm_zp=0;
+    2-1/
+        - si le modele est généré utilisant teachable model change les lignes 365 et 366 par ceci:
+             App_Context_Ptr->Ai_ContextPtr->nn_input_norm_scale=127.5f;
+             App_Context_Ptr->Ai_ContextPtr->nn_input_norm_zp=127;
+         - si le modele est généré par tensorflow change ces lignes par:
+             App_Context_Ptr->Ai_ContextPtr->nn_input_norm_scale=255.0f;
+             App_Context_Ptr->Ai_ContextPtr->nn_input_norm_zp=0;
           
-2-2/
-  Réaliser le changement des noms des labels si nécessaire sur la ligne 126 de fichier fp_vision_app.c:
-    -pour le modele teachable machine c'est : const char* output_labels[AI_NET_OUTPUT_SIZE] = {"gauche", "droite", "tout droit", "demi tour", "nothing" };
-    -pour notre modele CNN réalisé avec tensorflow c'est:const char* output_labels[AI_NET_OUTPUT_SIZE] = {"bas", "droite", "gauche", "haut", "rien" };
+    2-2/
+     Réaliser le changement des noms des labels si nécessaire sur la ligne 126 de fichier fp_vision_app.c:
+        -pour le modele teachable machine c'est : const char* output_labels[AI_NET_OUTPUT_SIZE] = {"gauche", "droite", "tout droit", "demi tour", "nothing" };
+        -pour notre modele CNN réalisé avec tensorflow c'est:const char* output_labels[AI_NET_OUTPUT_SIZE] = {"bas", "droite", "gauche", "haut", "rien" };
     
 3-Sur audio_play.c (à partir de la ligne 144) dans "FP-AI-VISION1_CC-GTM_network\FP-AI-VISION1_V3.0.0\Projects\STM32H747I-DISCO\Applications\Common\CM7\Src" penser à réordonner les codes dans les if. Ceci est neccessaire car en changant l'ordre des labels sur le fichier fp_vision_app.c le code (qui génere l'audio) n'est plus synchroniser avec les labels.
 
